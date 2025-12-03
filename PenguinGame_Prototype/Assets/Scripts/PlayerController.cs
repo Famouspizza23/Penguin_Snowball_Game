@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public Transform snowball;
     public float growthRate = 0.05f;
 
+    
+
     public void OnMoveLeft()
     {
         if (isSwitching) return;
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
                 isSwitching = false;
             }
         }
-
+        speedIncreaseRate += 0.02f * Time.deltaTime;
         snowball.localScale += Vector3.one * growthRate * Time.deltaTime;
     }
 
@@ -84,12 +86,5 @@ public class PlayerController : MonoBehaviour
         isSwitching = true;
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Obstacle")
-        {
-            Time.timeScale = 0;
-            Debug.Log("Game Over!");
-        }
-    }
+   
 }

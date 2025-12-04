@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Speed")]
     public float forwardSpeed = 10f;
+    public float speedLimit;
     public float speedIncreaseRate = 0.02f;
     public float laneSwitchSpeed = 10f;
 
@@ -21,7 +23,9 @@ public class PlayerController : MonoBehaviour
     public Transform snowball;
     public float growthRate = 0.05f;
 
-    
+    [Header("Scoring")]
+    public float score;
+    public float scoreIncreaseRate = 1f;
 
     public void OnMoveLeft()
     {
@@ -56,7 +60,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        forwardSpeed += speedIncreaseRate * Time.deltaTime;
+        if (forwardSpeed < speedLimit)
+        {
+            forwardSpeed += speedIncreaseRate * Time.deltaTime;
+        }
+
+        score += scoreIncreaseRate * Time.deltaTime;
 
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
 

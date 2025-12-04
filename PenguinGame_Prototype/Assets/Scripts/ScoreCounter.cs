@@ -4,13 +4,20 @@ using UnityEngine;
 public class ScoreCounter : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    private int score;
+    private float score;
+
+    public PlayerController player;
+
+    public void Update()
+    {
+        score = player.score;
+        scoreText.text = "snowball size: " + Mathf.RoundToInt(score).ToString();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Obstacle") 
         {
             score += 10;
-            scoreText.text = "snowball size: " + score.ToString();
         }
     }
 

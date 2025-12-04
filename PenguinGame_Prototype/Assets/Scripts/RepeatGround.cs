@@ -7,7 +7,7 @@ public class RepeatGround : MonoBehaviour
 
     void Update()
     {
-        if (player.position.z - transform.position.z > tileLength)
+        if ((player.position.z + 10) - transform.position.z > tileLength)
         {
             transform.position += new Vector3(0, 0, tileLength * 2);
         }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9788c35c495acc34ba4930bab04d8bbc
+guid: ae92ecf525d4b4442bc65f27ad3a66e1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_0
+      name: PenguinCharacterCreatorIdleCOLOR_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86daaba2222125649a9907aff6a0a9c9
-      internalID: -1771040352
+      spriteID: 12ad1856b3c27364dbde3d9ccd62c890
+      internalID: 1426221083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_1
+      name: PenguinCharacterCreatorIdleCOLOR_1
       rect:
         serializedVersion: 2
         x: 28
@@ -147,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2925e1f9743e85f4f8e9af297cec5936
-      internalID: 1610916937
+      spriteID: eb3bfba9bcaae004eba15e3bc195e8d4
+      internalID: -721270569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_2
+      name: PenguinCharacterCreatorIdleCOLOR_2
       rect:
         serializedVersion: 2
         x: 56
@@ -169,14 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63adeb1da8c2dcf4da6cbd9bb61e3939
-      internalID: 664737182
+      spriteID: fcf7d52a8ceea2e4f99a284eb69672aa
+      internalID: -1317604229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_3
+      name: PenguinCharacterCreatorIdleCOLOR_3
       rect:
         serializedVersion: 2
         x: 84
@@ -191,14 +191,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e6abe5861971f24fb87e27aad770f75
-      internalID: 1263742142
+      spriteID: bacbceb10fa35444086fbd462d0cb938
+      internalID: -531725723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_4
+      name: PenguinCharacterCreatorIdleCOLOR_4
       rect:
         serializedVersion: 2
         x: 112
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f52fd26e98fc4146bcb1d53be103952
-      internalID: 623639774
+      spriteID: 803598e49340b3a4794de3995d397dfb
+      internalID: 1385887831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_5
+      name: PenguinCharacterCreatorIdleCOLOR_5
       rect:
         serializedVersion: 2
         x: 140
@@ -235,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02c8a40ae80b90144a52feb962b8a694
-      internalID: 44184428
+      spriteID: 68a75d5201a37a94bbe8f0275ef3c1c0
+      internalID: 1541845692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_6
+      name: PenguinCharacterCreatorIdleCOLOR_6
       rect:
         serializedVersion: 2
         x: 168
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75c24fb0a0e8e74409121d662717dbf2
-      internalID: -1402538069
+      spriteID: b305698a819442a43b3c5bd1badb520e
+      internalID: -1407097917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_7
+      name: PenguinCharacterCreatorIdleCOLOR_7
       rect:
         serializedVersion: 2
         x: 196
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5cf9b631c8ed8a4b910118d6a2e2eb5
-      internalID: 1135006491
+      spriteID: 706515f465b1aa949b2daf38244af408
+      internalID: -1350386798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PenguinCharacterCreatorIdleCOWBOY_8
+      name: PenguinCharacterCreatorIdleCOLOR_8
       rect:
         serializedVersion: 2
         x: 224
@@ -301,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 419915d07f9a48b438b5a7a9ef5cdeb9
-      internalID: 1576055226
+      spriteID: d6ae620a38d7a6a45899a4a6de0d58de
+      internalID: 1653893814
       vertices: []
       indices: 
       edges: []
@@ -311,7 +311,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 25717d77728378244b7c5a2ca42fb9b3
+    spriteID: f3236ad73d90b824c9b8f8da9129ab64
     internalID: 0
     vertices: []
     indices: 
@@ -321,15 +321,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PenguinCharacterCreatorIdleCOWBOY_0: -1771040352
-      PenguinCharacterCreatorIdleCOWBOY_1: 1610916937
-      PenguinCharacterCreatorIdleCOWBOY_2: 664737182
-      PenguinCharacterCreatorIdleCOWBOY_3: 1263742142
-      PenguinCharacterCreatorIdleCOWBOY_4: 623639774
-      PenguinCharacterCreatorIdleCOWBOY_5: 44184428
-      PenguinCharacterCreatorIdleCOWBOY_6: -1402538069
-      PenguinCharacterCreatorIdleCOWBOY_7: 1135006491
-      PenguinCharacterCreatorIdleCOWBOY_8: 1576055226
+      PenguinCharacterCreatorIdleCOLOR_0: 1426221083
+      PenguinCharacterCreatorIdleCOLOR_1: -721270569
+      PenguinCharacterCreatorIdleCOLOR_2: -1317604229
+      PenguinCharacterCreatorIdleCOLOR_3: -531725723
+      PenguinCharacterCreatorIdleCOLOR_4: 1385887831
+      PenguinCharacterCreatorIdleCOLOR_5: 1541845692
+      PenguinCharacterCreatorIdleCOLOR_6: -1407097917
+      PenguinCharacterCreatorIdleCOLOR_7: -1350386798
+      PenguinCharacterCreatorIdleCOLOR_8: 1653893814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

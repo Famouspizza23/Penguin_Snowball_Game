@@ -4,14 +4,13 @@ public class MoveFog : MonoBehaviour
 {
     public PlayerController controller;
 
-    public float speed;
+    //public float speed;
 
 
     // Update is called once per frame
     void Update()
     {
-        speed = controller.forwardSpeed;
 
-        transform.position = new Vector3(0, transform.position.y, transform.position.z + speed * Time.deltaTime);
+        transform.position = new Vector3(0, 6 + controller.transform.position.y, 60 + controller.transform.position.z);
     }
 }

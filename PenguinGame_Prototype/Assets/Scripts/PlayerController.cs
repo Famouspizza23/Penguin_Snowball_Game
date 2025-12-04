@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -68,6 +68,14 @@ public class PlayerController : MonoBehaviour
         targetX = lanes[currentLane];
     }
 
+    public void AReset()
+    {
+        if (gameOver)
+        {
+            menu.SetBool("GameStart", false);
+        }
+    }
+
     void Start()
     {
         targetX = lanes[currentLane];
@@ -124,6 +132,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             //Time.timeScale = 0;
+            startGame = false;
             Debug.Log("Game Over!");
             GameStartMenu.SetBool("GameStart", false);
             forwardSpeed = 0f;
@@ -146,6 +155,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayGame()
     {
+        startGame = true;
         speedLimit = storedSpeedLimit;
         forwardSpeed = storedSpeed;
         score = 0f;

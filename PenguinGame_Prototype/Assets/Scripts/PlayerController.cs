@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [Header("Snowball")]
     public Transform snowball;
     public float growthRate = 0.05f;
+    public float growthMax = 10f;
 
     [Header("Scoring")]
     public float score;
@@ -84,8 +85,13 @@ public class PlayerController : MonoBehaviour
                 isSwitching = false;
             }
         }
-        speedIncreaseRate += 0.02f * Time.deltaTime;
-        snowball.localScale += Vector3.one * growthRate * Time.deltaTime;
+
+        speedIncreaseRate += 0.001f * Time.deltaTime;
+
+        if (snowball.localScale.x < growthMax)
+        {
+            snowball.localScale += Vector3.one * growthRate * Time.deltaTime;
+        }
     }
 
     private void SetNewLane()

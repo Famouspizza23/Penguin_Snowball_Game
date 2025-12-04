@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -5,7 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Speed")]
     public float forwardSpeed = 10f;
-    public float speedLimit;
+    private float storedSpeed;
+    public float speedLimit = 50;
+    private float storedSpeedLimit;
     public float speedIncreaseRate = 0.02f;
     public float laneSwitchSpeed = 10f;
 
@@ -27,6 +30,10 @@ public class PlayerController : MonoBehaviour
     [Header("Scoring")]
     public float score;
     public float scoreIncreaseRate = 1f;
+
+    [Header("Game Over")]
+    public Animator menu;
+    public Transform startingPosition;
 
     public void OnMoveLeft()
     {
@@ -57,7 +64,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         targetX = lanes[currentLane];
+        //this is to stop the player before they start moving
+        storedSpeed = forwardSpeed;
+        forwardSpeed = 0f;
+        storedSpeedLimit = speedLimit;
+        speedLimit = 0f;
     }
+    
 
     void Update()
     {
@@ -94,6 +107,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Gameover Sequence
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Obstacle")
+        {
+            //Time.timeScale = 0;
+            Debug.Log("Game Over!");
+            forwardSpeed = 0f;
+            speedLimit = 0;
+            menu.SetBool("GameStart", false);
+        }
+    }
+
     private void SetNewLane()
     {
         targetX = lanes[currentLane];
@@ -101,5 +127,12 @@ public class PlayerController : MonoBehaviour
         isSwitching = true;
     }
 
+    public void PlayGame()
+    {
+        speedLimit = storedSpeedLimit;
+        forwardSpeed = storedSpeed;
+        score = 0f;
+        snowball.localScale = Vector3.one;
+    }
    
 }

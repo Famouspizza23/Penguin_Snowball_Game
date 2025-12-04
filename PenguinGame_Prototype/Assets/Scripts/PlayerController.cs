@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -32,8 +33,14 @@ public class PlayerController : MonoBehaviour
     public float scoreIncreaseRate = 1f;
 
     [Header("Game Over")]
-    public Animator menu;
+    public Animator GameOverMenu;
     public Transform startingPosition;
+    public TextMeshProUGUI scoreText;
+    public GameObject[] PlayerHats;
+    public GameObject playerAlpha;
+
+    [Header("Game Start")]
+    public Animator GameStartMenu;
 
     public void OnMoveLeft()
     {
@@ -79,7 +86,11 @@ public class PlayerController : MonoBehaviour
             forwardSpeed += speedIncreaseRate * Time.deltaTime;
         }
 
-        score += scoreIncreaseRate * Time.deltaTime;
+        if (GameStartMenu.GetBool("GameStart") == true) //checks if the game has started to increase score
+        {
+            score += scoreIncreaseRate * Time.deltaTime; 
+        }
+        
 
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
 
@@ -114,9 +125,15 @@ public class PlayerController : MonoBehaviour
         {
             //Time.timeScale = 0;
             Debug.Log("Game Over!");
+            GameStartMenu.SetBool("GameStart", false);
             forwardSpeed = 0f;
             speedLimit = 0;
-            menu.SetBool("GameStart", false);
+            GameOverMenu.SetBool("GameOver", true);
+
+            PlayerHats[Global.playerHatNumber].GetComponent<UnityEngine.UI.Image>().enabled = true;
+            playerAlpha.GetComponent<UnityEngine.UI.Image>().color = Global.playerColor;
+
+            scoreText.text = "snowball size:  " + Mathf.FloorToInt(score).ToString();
         }
     }
 

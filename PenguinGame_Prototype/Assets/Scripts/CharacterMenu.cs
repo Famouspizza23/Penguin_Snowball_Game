@@ -30,10 +30,16 @@ public class CharacterMenu : MonoBehaviour
     {
         if (!animator.GetBool("GameStart"))
         {
+            
             playerHat[Global.playerHatNumber].GetComponent<UnityEngine.UI.Image>().enabled = true;
             playerAlpha.GetComponent<UnityEngine.UI.Image>().color = Global.playerColor;
             player.PlayGame();
             animator.SetBool("GameStart", true);
         }
+    }
+
+    public void EndGame()
+    {
+
     }
 }

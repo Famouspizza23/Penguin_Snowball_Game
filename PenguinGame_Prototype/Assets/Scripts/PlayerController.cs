@@ -70,9 +70,9 @@ public class PlayerController : MonoBehaviour
 
     public void AReset()
     {
-        if (gameOver)
+        if (GameOverMenu.GetBool("GameOver") == true)
         {
-            menu.SetBool("GameStart", false);
+            GameStartMenu.SetBool("GameStart", false);
         }
     }
 
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             //Time.timeScale = 0;
-            startGame = false;
+            
             Debug.Log("Game Over!");
             GameStartMenu.SetBool("GameStart", false);
             forwardSpeed = 0f;
@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayGame()
     {
-        startGame = true;
+        GameStartMenu.SetBool("GameStart", true);
         speedLimit = storedSpeedLimit;
         forwardSpeed = storedSpeed;
         score = 0f;

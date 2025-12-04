@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 7222180}
   - component: {fileID: 7222179}
   - component: {fileID: 7222182}
-  - component: {fileID: 7222183}
   m_Layer: 5
   m_Name: Lime
   m_TagString: Untagged
@@ -2087,16 +2086,6 @@ MonoBehaviour:
   - {fileID: 591930953}
   playerAlpha: {fileID: 559224460}
   GameStartMenu: {fileID: 1915235859}
-  scoreIncreaseRate: 2
-  EndScreen: {fileID: 714747372}
-  scoreText: {fileID: 769661935}
-  menu: {fileID: 1915235859}
-  startingPosition: {fileID: 1231961507}
-  gameOverScore: {fileID: 1183933665}
-  gameOver: 0
-  pSource: {fileID: 26358023}
-  walkingSFX: {fileID: 8300000, guid: f09438a80acd3c74b9fa9b6003909b12, type: 3}
-  walkingSoundCooldown: 0.5
 --- !u!4 &541488876
 Transform:
   m_ObjectHideFlags: 0
@@ -2343,8 +2332,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Snowball size: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59c7b5db42689c44b96c03fdc3298428, type: 2}
-  m_sharedMaterial: {fileID: 7807229164103254868, guid: 59c7b5db42689c44b96c03fdc3298428, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 204737abe0e5aac419368acd771a2ff5, type: 2}
+  m_sharedMaterial: {fileID: -850410602744553404, guid: 204737abe0e5aac419368acd771a2ff5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3331,8 +3320,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: START!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59c7b5db42689c44b96c03fdc3298428, type: 2}
-  m_sharedMaterial: {fileID: 7807229164103254868, guid: 59c7b5db42689c44b96c03fdc3298428, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 204737abe0e5aac419368acd771a2ff5, type: 2}
+  m_sharedMaterial: {fileID: -850410602744553404, guid: 204737abe0e5aac419368acd771a2ff5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3356,8 +3345,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.35
-  m_fontSizeBase: 19.35
+  m_fontSize: 33.7
+  m_fontSizeBase: 33.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3439,7 +3428,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1044447842}
   - {fileID: 1183933664}
   - {fileID: 169636783}
   m_Father: {fileID: 1752897354}
@@ -9035,7 +9023,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1360462477}
+  m_Father: {fileID: 541488876}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &818125282
 MonoBehaviour:
@@ -10865,13 +10853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf57a99541a0504791daee0cad96d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuHats:
-  - {fileID: 1532114454}
-  - {fileID: 621635667}
-  - {fileID: 1200977030}
-  - {fileID: 1036580534}
-  - {fileID: 381490063}
-  - {fileID: 591930953}
 --- !u!1 &1248220252
 GameObject:
   m_ObjectHideFlags: 0
@@ -11139,7 +11120,6 @@ GameObject:
   - component: {fileID: 1293988868}
   - component: {fileID: 1293988867}
   - component: {fileID: 1293988870}
-  - component: {fileID: 1293988871}
   m_Layer: 5
   m_Name: Orange
   m_TagString: Untagged
@@ -11742,7 +11722,6 @@ Transform:
   - {fileID: 2020225436}
   - {fileID: 1354357248}
   - {fileID: 1080760428}
-  - {fileID: 818125281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1383727098
@@ -12619,7 +12598,6 @@ GameObject:
   - component: {fileID: 1519571425}
   - component: {fileID: 1519571424}
   - component: {fileID: 1519571427}
-  - component: {fileID: 1519571428}
   m_Layer: 5
   m_Name: Black
   m_TagString: Untagged
@@ -13057,6 +13035,7 @@ RectTransform:
   - {fileID: 769661936}
   - {fileID: 1235334536}
   - {fileID: 1915235858}
+  - {fileID: 714747373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13781,7 +13760,6 @@ RectTransform:
   - {fileID: 969429359}
   - {fileID: 259879545}
   - {fileID: 1960957838}
-  - {fileID: 591158529}
   - {fileID: 1506778525}
   - {fileID: 2080509678}
   - {fileID: 118338106}
@@ -14688,8 +14666,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Change Hat!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59c7b5db42689c44b96c03fdc3298428, type: 2}
-  m_sharedMaterial: {fileID: 7807229164103254868, guid: 59c7b5db42689c44b96c03fdc3298428, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 204737abe0e5aac419368acd771a2ff5, type: 2}
+  m_sharedMaterial: {fileID: -850410602744553404, guid: 204737abe0e5aac419368acd771a2ff5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14713,8 +14691,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 19.32
+  m_fontSizeBase: 19.32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14943,4 +14921,3 @@ SceneRoots:
   - {fileID: 1360462477}
   - {fileID: 224848589}
   - {fileID: 1752897354}
-  - {fileID: 1231961507}

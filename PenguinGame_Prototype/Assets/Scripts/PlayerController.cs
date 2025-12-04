@@ -1,6 +1,6 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,8 +32,19 @@ public class PlayerController : MonoBehaviour
     public float scoreIncreaseRate = 1f;
 
     [Header("Game Over")]
+    public GameObject EndScreen, scoreText;
     public Animator menu;
     public Transform startingPosition;
+    public TextMeshProUGUI gameOverScore;
+    public bool gameOver;
+
+    [Header("Audio")]
+    public AudioSource pSource;
+    public AudioClip walkingSFX;
+
+    bool startGame;
+    private float currentSoundCooldown;
+    public float walkingSoundCooldown;
 
     public void OnMoveLeft()
     {
@@ -61,6 +72,14 @@ public class PlayerController : MonoBehaviour
         targetX = lanes[currentLane];
     }
 
+    public void AReset()
+    {
+        if (gameOver)
+        {
+            menu.SetBool("GameStart", false);
+        }
+    }
+
     void Start()
     {
         targetX = lanes[currentLane];
@@ -77,6 +96,14 @@ public class PlayerController : MonoBehaviour
         if (forwardSpeed < speedLimit)
         {
             forwardSpeed += speedIncreaseRate * Time.deltaTime;
+        }
+
+        currentSoundCooldown -= Time.deltaTime;
+
+        if(currentSoundCooldown <= 0 && startGame)
+        {
+            currentSoundCooldown = walkingSoundCooldown;
+            pSource.PlayOneShot(walkingSFX);
         }
 
         score += scoreIncreaseRate * Time.deltaTime;
@@ -113,10 +140,14 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             //Time.timeScale = 0;
+            startGame = false;
             Debug.Log("Game Over!");
             forwardSpeed = 0f;
             speedLimit = 0;
-            menu.SetBool("GameStart", false);
+            gameOver = true;
+            scoreText.SetActive(false);
+            EndScreen.SetActive(true);
+            gameOverScore.text = "YOUR SCORE: " + Mathf.RoundToInt(score).ToString();
         }
     }
 
@@ -129,6 +160,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayGame()
     {
+        startGame = true;
         speedLimit = storedSpeedLimit;
         forwardSpeed = storedSpeed;
         score = 0f;

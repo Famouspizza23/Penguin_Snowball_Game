@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2548859193787270621}
   - component: {fileID: 2610123820439250209}
   m_Layer: 0
-  m_Name: Snowpile
+  m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: c7f1689f4890da84c9ae46684f697d23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

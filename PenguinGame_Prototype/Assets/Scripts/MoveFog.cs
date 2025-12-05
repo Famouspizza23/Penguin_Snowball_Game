@@ -6,8 +6,6 @@ public class MoveFog : MonoBehaviour
 
     //public float speed;
 
-
-    // Update is called once per frame
     void Update()
     {
 

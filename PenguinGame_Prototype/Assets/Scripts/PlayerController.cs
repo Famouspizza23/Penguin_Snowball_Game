@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Speed")]
@@ -38,11 +39,12 @@ public class PlayerController : MonoBehaviour
     public GameObject playerAlpha;
 
     [Header("Game Start")]
+    public bool gameEnd = false;
     public Animator GameStartMenu;
 
     public void OnMoveLeft()
     {
-        if (isSwitching) return;
+        if (isSwitching || gameEnd) return;
 
         if (currentLane > 0)
         {
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMoveRight()
     {
-        if (isSwitching) return;
+        if (isSwitching || gameEnd) return;
 
         if (currentLane < 2)
         {
@@ -74,6 +76,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void UniversalResetButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     void Start()
     {
         targetX = lanes[currentLane];
@@ -87,6 +94,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+
+        if (gameEnd) return;
+
         if (forwardSpeed < speedLimit)
         {
             forwardSpeed += speedIncreaseRate * Time.deltaTime;
@@ -140,6 +151,8 @@ public class PlayerController : MonoBehaviour
             forwardSpeed = 0f;
             speedLimit = 0;
             GameOverMenu.SetBool("GameOver", true);
+
+            gameEnd = true;
 
             PlayerHats[Global.playerHatNumber].GetComponent<UnityEngine.UI.Image>().enabled = true;
             playerAlpha.GetComponent<UnityEngine.UI.Image>().color = Global.playerColor;

@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UniversalResetButton",
+                    "type": "Button",
+                    "id": "4c5c4380-260b-40b7-91c0-aa5f34164c35",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -153,6 +162,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ResetGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1fcc5cb8-3d88-4d41-a11b-771880f82aa2",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UniversalResetButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52d713a2-20ea-49cc-886e-7699c873b83a",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UniversalResetButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -14,9 +14,6 @@ public class ObstacleSpawner : MonoBehaviour
 
     private float[] lanes = new float[] { -4f, 0f, 4f };
 
-    
-    
-
     void Update()
     {
         spawnTimer -= Time.deltaTime;
@@ -31,9 +28,6 @@ public class ObstacleSpawner : MonoBehaviour
                 lastSpawnZ += spawnInterval;
             }
         }
-
-
-        
     }
     void SpawnObstacleRow()
     {

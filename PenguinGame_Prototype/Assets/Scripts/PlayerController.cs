@@ -1,8 +1,6 @@
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using TMPro;
-
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Speed")]

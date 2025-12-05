@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private float storedSpeed;
     public float speedLimit = 50;
     private float storedSpeedLimit;
-    public float speedIncreaseRate = 0.02f;
+    public float speedIncreaseRate = 0.05f;
     public float laneSwitchSpeed = 10f;
 
     [Header("Lane Logic")]
@@ -116,7 +116,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        speedIncreaseRate += 0.001f * Time.deltaTime;
+
+
+        speedIncreaseRate += 0.008f * Time.deltaTime;
+
+        
 
         if (snowball.localScale.x < growthMax)
         {

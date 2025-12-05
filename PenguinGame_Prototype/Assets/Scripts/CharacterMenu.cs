@@ -11,6 +11,11 @@ public class CharacterMenu : MonoBehaviour
     public GameObject playerAlpha; //and the color
     public Animator animator;
 
+    private void Start()
+    {
+        Global.playerColor = Color.white;
+    }
+
     public void ChangeColor()
     {
         menuAlpha.GetComponent<UnityEngine.UI.Image>().color = GetComponent<UnityEngine.UI.Image>().color;

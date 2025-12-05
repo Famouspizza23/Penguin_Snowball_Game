@@ -14,6 +14,7 @@ public class CharacterMenu : MonoBehaviour
     private void Start()
     {
         Global.playerColor = Color.white;
+        Global.playerHatNumber = 0;
     }
 
     public void ChangeColor()

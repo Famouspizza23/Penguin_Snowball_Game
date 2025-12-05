@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Game Over")]
     public Animator GameOverMenu;
-    public Transform startingPosition;
     public TextMeshProUGUI scoreText;
     public GameObject[] PlayerHats;
     public GameObject playerAlpha;

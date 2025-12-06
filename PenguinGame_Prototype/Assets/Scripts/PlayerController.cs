@@ -6,9 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Speed")]
     public float forwardSpeed = 10f;
-    private float storedSpeed;
     public float speedLimit = 50;
-    private float storedSpeedLimit;
     public float speedIncreaseRate = 0.05f;
     public float laneSwitchSpeed = 10f;
 
@@ -91,12 +89,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 240;
         targetX = lanes[currentLane];
         //this is to stop the player before they start moving
-        storedSpeed = forwardSpeed;
-        forwardSpeed = 0f;
-        storedSpeedLimit = speedLimit;
-        speedLimit = 0f;
     }
     
 
@@ -181,8 +176,6 @@ public class PlayerController : MonoBehaviour
     {
         hasStartGame = true;
         GameStartMenu.SetBool("GameStart", true);
-        speedLimit = storedSpeedLimit;
-        forwardSpeed = storedSpeed;
         score = 0f;
         snowball.localScale = Vector3.one;
     }

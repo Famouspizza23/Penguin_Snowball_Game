@@ -41,6 +41,15 @@ public class PlayerController : MonoBehaviour
     public bool gameEnd = false;
     public Animator GameStartMenu;
 
+    [Header("Player Audio")]
+    public AudioSource pSource;
+    public AudioClip walkingSFX;
+    public AudioClip loosingSFX;
+
+    bool hasStartGame;
+    private float currentSoundCooldown;
+    public float walkingSoundCooldown;
+
     public void OnMoveLeft()
     {
         if (isSwitching || gameEnd) return;
@@ -93,8 +102,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
-
         if (gameEnd) return;
 
         if (forwardSpeed < speedLimit)
@@ -106,7 +113,14 @@ public class PlayerController : MonoBehaviour
         {
             score += scoreIncreaseRate * Time.deltaTime; 
         }
-        
+
+        currentSoundCooldown -= Time.deltaTime;
+
+        if (currentSoundCooldown <= 0 && hasStartGame)
+        {
+            currentSoundCooldown = walkingSoundCooldown;
+            pSource.PlayOneShot(walkingSFX);
+        }
 
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
 
@@ -126,11 +140,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
-
         speedIncreaseRate += 0.008f * Time.deltaTime;
-
-        
 
         if (snowball.localScale.x < growthMax)
         {
@@ -144,7 +154,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             //Time.timeScale = 0;
-            
+            pSource.PlayOneShot(loosingSFX);
             Debug.Log("Game Over!");
             GameStartMenu.SetBool("GameStart", false);
             forwardSpeed = 0f;
@@ -169,6 +179,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayGame()
     {
+        hasStartGame = true;
         GameStartMenu.SetBool("GameStart", true);
         speedLimit = storedSpeedLimit;
         forwardSpeed = storedSpeed;
